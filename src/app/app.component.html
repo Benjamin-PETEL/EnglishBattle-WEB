@@ -1,12 +1,26 @@
-<nav>
-  <ul>
-    <li>Home</li>
-    <li>Verbs</li>
-  </ul>
+<nav class="flex px-4 justify-between items-center w-full bg-main text-3xl text-white h-16 list-none sticky top-0">
+  <div class="flex">
+    <a routerLink="/"><img class ="h-8" src="../assets/img/home.svg"></a>
+    <ul class="flex flex-col text-center bg-main bg-opacity-95 z-10 fixed -right-full w-full top-16 md:flex-row md:static" id="menu">
+      <li class="ml-4"><a routerLink="/verbs">Verbs</a></li>
+    </ul>
+  </div>
+
+  <div class="flex">
+    <!-- Toggle switch dark mode -->
+    <img src="../assets/img/icon_sun.svg" alt="" class="h-8 cursor-pointer" id="dark_button" (click)="toggleDarkMode()">
+
+    <!-- Hamburger -->
+    <div class="cursor-pointer ml-4 md:hidden" id="hamburger" (click)="toggleMobilMenu()">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+  </div>
+  </div>
 </nav>
 
 <router-outlet></router-outlet>
 
-<footer>
-  <p>Made with love by Ben</p>
+<footer class="bg-main h-12 p-3 text-white text-center">
+  <p>Made with love by @Ben</p>
 </footer>
