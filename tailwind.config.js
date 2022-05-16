@@ -8,6 +8,9 @@ module.exports = {
       minHeight: {
         '(screen)': 'calc(100vh - 7rem)'
       },
+      height: {
+        '(screen)': 'calc(100vh - 7rem)'
+      },
       colors: {
         transparent: 'transparent',
         current: 'current',
