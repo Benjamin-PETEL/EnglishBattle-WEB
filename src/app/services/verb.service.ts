@@ -2,12 +2,16 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Verb } from "../models/verb.model";
+import { environment } from "src/environments/environment";
 
 @Injectable()
 export class VerbService {
+
+    private API_URL= environment.API_URL;
+
     constructor (private httpClient: HttpClient) {}
     
     getVerbs (): Observable<Verb[]> {
-        return this.httpClient.get<Verb[]>('http://localhost:3000/api/verbs');
+        return this.httpClient.get<Verb[]>(this.API_URL + '/verbs');
     }
 }
