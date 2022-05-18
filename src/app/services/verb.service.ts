@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 import { Verb } from "../models/verb.model";
 import { environment } from "src/environments/environment";
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class VerbService {
 
     private API_URL= environment.API_URL;
