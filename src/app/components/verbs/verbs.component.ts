@@ -11,14 +11,21 @@ import { VerbService } from 'src/app/services/verb.service';
 export class VerbsComponent implements OnInit, OnDestroy {
 
   verbs: Verb[] = [];
+  error: Error | null = null;
   private getVerbsSubscription: Subscription | undefined;
 
   constructor(private verbService: VerbService) { }
 
   ngOnInit(): void {
-    this.getVerbsSubscription = this.verbService.getVerbs().subscribe((res: Verb[]) => {
-      this.verbs = res
-    });
+    this.getVerbsSubscription = this.verbService.getVerbs().subscribe(
+      (res: Verb[]) => {
+        this.verbs = res;
+      },
+      (err: Error) => {
+        this.error = err;
+      }
+    );
+    
   }
 
   ngOnDestroy(): void {
