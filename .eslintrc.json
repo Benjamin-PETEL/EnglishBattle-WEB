@@ -34,7 +34,11 @@
             "prefix": "app",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "semi": [2, "always"],
+        "array-bracket-spacing": ["error", "never"],
+        "object-curly-spacing": ["error", "always"],
+        "quotes": ["error", "single"]
       }
     },
     {

@@ -10,8 +10,13 @@
             <input type="text" name="" id="" class="w-full">
         </div>
 
+        <!-- error -->
+        <div *ngIf="error" id="error">
+            {{ error.message }}
+        </div>
+
         <!-- table -->
-        <div class="h-full overflow-auto">
+        <div *ngIf="!error" class="h-full overflow-auto">
             <table class="h-full w-full">
                 <thead class="sticky top-0 bg-main">
                     <tr class="text-left">

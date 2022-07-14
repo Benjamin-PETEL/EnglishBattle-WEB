@@ -74,7 +74,7 @@ export class AppComponent implements OnInit{
   private queryImageById(imageId: string): HTMLImageElement {
     const image: HTMLImageElement | null = document.querySelector(imageId);
     if (!image){
-      throw new Error(`AppComponent: Selector ${imageId} is not defined`)
+      throw new Error(`AppComponent: Selector ${imageId} is not defined`);
     }
     else
       return image;
