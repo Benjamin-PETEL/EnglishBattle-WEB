@@ -5,7 +5,7 @@ import { VerbsComponent } from './components/verbs/verbs.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'verbs', component: VerbsComponent }
+  { path: 'verbs', component: VerbsComponent },
 ];
 
 @NgModule({

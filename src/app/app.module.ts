@@ -12,7 +12,7 @@ import { VerbService } from './services/verb.service';
   declarations: [
     AppComponent,
     HomeComponent,
-    VerbsComponent
+    VerbsComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,7 +20,7 @@ import { VerbService } from './services/verb.service';
     HttpClientModule
   ],
   providers: [
-    VerbService
+    VerbService,
   ],
   bootstrap: [AppComponent]
 })
