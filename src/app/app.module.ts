@@ -15,7 +15,6 @@ import { SimpleComponent } from './components/simple/simple.component';
     AppComponent,
     HomeComponent,
     VerbsComponent,
-    SimpleComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +23,6 @@ import { SimpleComponent } from './components/simple/simple.component';
   ],
   providers: [
     VerbService,
-    SimpleService
   ],
   bootstrap: [AppComponent]
 })
