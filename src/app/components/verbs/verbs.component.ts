@@ -11,6 +11,7 @@ import { VerbService } from 'src/app/services/verb.service';
 export class VerbsComponent implements OnInit, OnDestroy {
 
   verbs: Verb[] = [];
+  displayVerbs: Verb[] = [];
   error: Error | null = null;
   private getVerbsSubscription: Subscription | undefined;
 
@@ -20,6 +21,7 @@ export class VerbsComponent implements OnInit, OnDestroy {
     this.getVerbsSubscription = this.verbService.getVerbs().subscribe(
       (res: Verb[]) => {
         this.verbs = res;
+        this.displayVerbs = this.verbs;       
       },
       (err: Error) => {
         this.error = err;
@@ -32,4 +34,14 @@ export class VerbsComponent implements OnInit, OnDestroy {
     this.getVerbsSubscription?.unsubscribe();
   }
 
+  searchVerb(searchVerb: string): void {
+    let result = this.verbs.filter(verb => {    
+      let bv = verb.baseVerbal.includes(searchVerb);
+      let sp = verb.simplePast.includes(searchVerb);
+      let pp = verb.pastParticipe.includes(searchVerb);      
+      return bv || sp || pp;
+    });
+    
+    this.displayVerbs = result;
+  }
 }

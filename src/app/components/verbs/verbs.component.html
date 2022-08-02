@@ -1,13 +1,13 @@
-<main class="h-(screen) flex flex-col justify-center items-center p-8 bg-mainBackground bg-center">
-    <div class="h-full bg-white dark:bg-dark text-dark dark:text-white p-4 overflow-auto md:w-4/6 lg:w-1/2 ">
-        <h1 class="mb-6 text-4xl text-center">VERBS</h1>
+<main class="h-(screen) flex flex-col items-center p-8 bg-mainBackground bg-center">
+    <div class="max-h-full bg-white dark:bg-dark text-dark dark:text-white p-4 md:w-4/6 lg:w-1/2 ">
+        <h1 class="mb-6 text-4xl text-center sticky">VERBS</h1>
 
         <!-- search bar -->
-        <div class="flex border-2 rounded bg-grey mb-6">
+        <div class="flex border-2 rounded bg-grey mb-6" id="verbSearchButton">
             <button class="flex items-center justify-center px-4 border-r">
                 <img src="../../../assets/img/icon_magnifier.svg" class="text-pink" alt="">
             </button>
-            <input type="text" name="" id="" class="w-full">
+            <input #inputstring type="text" name="" id="verbSearchBar" class="w-full text-dark" (keyup)="searchVerb(inputstring.value)">
         </div>
 
         <!-- error -->
@@ -16,8 +16,8 @@
         </div>
 
         <!-- table -->
-        <div *ngIf="!error" class="h-full overflow-auto">
-            <table class="h-full w-full">
+        <div *ngIf="!error" class="max-h-full ">
+            <table class="w-full">
                 <thead class="sticky top-0 bg-main">
                     <tr class="text-left">
                         <th>Base Verbal</th>
@@ -25,8 +25,8 @@
                         <th>Past Participe</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr *ngFor="let verb of verbs">
+                <tbody class="max-h-full overflow-auto">
+                    <tr *ngFor="let verb of displayVerbs">
                         <td>{{ verb.baseVerbal }}</td>
                         <td>{{ verb.simplePast }}</td>
                         <td>{{ verb.pastParticipe }}</td>
