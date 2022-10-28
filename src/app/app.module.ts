@@ -7,19 +7,24 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { VerbService } from './services/verb.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FooterComponent } from './components/footer/footer.component';
 
+ 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatToolbarModule,
+    FlexLayoutModule
   ],
   providers: [
     VerbService,

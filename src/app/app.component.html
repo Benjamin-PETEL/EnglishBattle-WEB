@@ -1,36 +1,18 @@
-<nav class="flex px-4 justify-between items-center w-full bg-main text-3xl text-white h-16 list-none sticky top-0">
-  <div class="flex">
-    <a routerLink="/" data-testid="homeLinkPage">
-      <img class ="h-8" src="../assets/img/LogoEnglishBattleHeader.png">
-    </a>
-    <ul class="flex flex-col text-center bg-main bg-opacity-95 z-10 fixed -right-full w-full top-16 md:flex-row md:static" id="menu">
-      <li routerLinkActive="active" class="ml-4">
-        <a routerLink="/verbs" data-testid="verbsLinkPage">Verbs</a>
-      </li>
-    </ul>
-  </div>
+<mat-toolbar color="primary">
+  <a routerLink="/" data-testid="homeLinkPage">
+    <img src="../assets/img/LogoEnglishBattleHeader.png">
+  </a>
+  <ul id="menu">
+    <li routerLinkActive="active">
+      <a routerLink="/verbs" data-testid="verbsLinkPage">Verbs</a>
+    </li>
+  </ul>
+</mat-toolbar>
 
-  <div class="flex">
-    <!-- Toggle switch dark mode -->
-    <img src="../assets/img/icon_sun.svg" alt="" class="h-8 cursor-pointer" id="dark_button" (click)="toggleDarkMode()">
-
-    <!-- Hamburger -->
-    <div class="cursor-pointer ml-4 md:hidden" id="hamburger" (click)="toggleMobilMenu()">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-  </div>
-  </div>
-</nav>
-
-<router-outlet></router-outlet>
-
-<footer fxFlex>
+<main>
   <div>
-    <button mat-raised-button>Basic</button>
-    <button mat-raised-button color="primary">Primary</button>
-    <button mat-raised-button color="accent">Accent</button>
-    <button mat-raised-button color="warn">Warn</button>
+    <router-outlet></router-outlet>
   </div>
-  <p>Made with love by @Ben</p>
-</footer>
+</main>
+
+<app-footer></app-footer>

@@ -1,0 +1,5 @@
+@use '../../../styles/variables';
+
+footer{
+    height: variables.$footer-height;
+}

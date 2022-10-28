@@ -1,0 +1,24 @@
+@use 'SASS:map';
+@use '@angular/material' as mat;
+
+@mixin theme($theme) {
+    $color-config: mat.get-color-config($theme);
+    @if $color-config != null {
+        $accent-palette: map.get($color-config, 'accent');
+        @include base($accent-palette);
+    }
+}
+
+@mixin base($accent-palette) {
+    a{
+        color: mat.get-color-from-palette($accent-palette);
+    }
+
+    a:hover{
+        color: mat.get-color-from-palette($accent-palette, darker);
+    }
+
+    a:active{
+        color: mat.get-color-from-palette($accent-palette, lighter);
+    }
+}

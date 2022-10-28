@@ -1,23 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
 @use '@angular/material' as mat;
+@use 'light-theme';
+@use 'material-theme';
+@use 'components';
 
 @include mat.core();
+@include mat.core-theme(light-theme.$main-theme);
 
-$my-primary: mat.define-palette(mat.$teal-palette, 500);
-$my-accent: mat.define-palette(mat.$orange-palette, A200, A100, A400);
-$my-warn: mat.define-palette(mat.$deep-orange-palette);
+@include mat.button-theme(light-theme.$main-theme);
+@include mat.toolbar-theme(light-theme.$main-theme);
+@include material-theme.theme(light-theme.$main-theme);
+@include components.theme(light-theme.$main-theme);
 
-$my-theme: mat.define-light-theme((
- color: (
-   primary: $my-primary,
-   accent: $my-accent,
-   warn: $my-warn,
- )
-));
-
-@include mat.core-theme($my-theme);
-
-@include mat.all-component-themes($my-theme);
+p{
+  margin:0;
+}
 
 .bar{
     display: block;
