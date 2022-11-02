@@ -10,13 +10,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FooterComponent } from './components/footer/footer.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
  
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    FooterComponent
+    ToolbarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

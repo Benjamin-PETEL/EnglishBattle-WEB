@@ -1,0 +1,16 @@
+@use '../../../styles/variables';
+
+.mat-toolbar {
+
+    height: variables.$toolbar-height;
+    ul{
+        list-style: none;
+        a{
+            text-decoration: none;
+        }
+    }
+
+    img {
+        height: 2rem;
+    }
+}
