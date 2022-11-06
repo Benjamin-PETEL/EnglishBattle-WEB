@@ -1,45 +1,41 @@
-<main class="h-(screen) flex flex-col items-center p-8 bg-mainBackground bg-center">
-    <div class="max-h-full bg-white dark:bg-dark text-dark dark:text-white p-4 md:w-4/6 lg:w-1/2 ">
-        <h1 class="mb-6 text-4xl text-center sticky">VERBS</h1>
+<h1 class="mb-6 text-4xl text-center sticky">VERBS</h1>
 
-        <!-- search bar -->
-        <div class="flex border-2 rounded bg-grey mb-6" id="verbSearchButton">
-            <button class="flex items-center justify-center px-4 border-r">
-                <img src="../../../assets/img/icon_magnifier.svg" class="text-pink" alt="">
-            </button>
-            <input #inputstring type="text" name="" id="verbSearchBar" class="w-full text-dark" (keyup)="searchVerb(inputstring.value)">
-        </div>
+<!-- search bar -->
+<div class="flex border-2 rounded bg-grey mb-6" id="verbSearchButton">
+    <button class="flex items-center justify-center px-4 border-r">
+        <img src="../../../assets/img/icon_magnifier.svg" class="text-pink" alt="">
+    </button>
+    <input #inputstring type="text" name="" id="verbSearchBar" class="w-full text-dark" (keyup)="searchVerb(inputstring.value)">
+</div>
 
-        <!-- error -->
-        <div *ngIf="error" id="error">
-            {{ error.message }}
-        </div>
+<!-- error -->
+<div *ngIf="error" id="error">
+    {{ error.message }}
+</div>
 
-        <div>
-            <button mat-raised-button>Basic</button>
-            <button mat-raised-button color="primary">Primary</button>
-            <button mat-raised-button color="accent">Accent</button>
-            <button mat-raised-button color="warn">Warn</button>
-        </div>
+<div>
+    <button mat-raised-button>Basic</button>
+    <button mat-raised-button color="primary">Primary</button>
+    <button mat-raised-button color="accent">Accent</button>
+    <button mat-raised-button color="warn">Warn</button>
+</div>
 
-        <!-- table -->
-        <div *ngIf="!error" class="max-h-full ">
-            <table class="w-full">
-                <thead class="sticky top-0 bg-main">
-                    <tr class="text-left">
-                        <th>Base Verbal</th>
-                        <th>Simple Past</th>
-                        <th>Past Participe</th>
-                    </tr>
-                </thead>
-                <tbody class="max-h-full overflow-auto">
-                    <tr *ngFor="let verb of displayVerbs">
-                        <td>{{ verb.baseVerbal }}</td>
-                        <td>{{ verb.simplePast }}</td>
-                        <td>{{ verb.pastParticipe }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</main>
+<!-- table -->
+<div *ngIf="!error" class="max-h-full ">
+    <table class="w-full">
+        <thead class="sticky top-0 bg-main">
+            <tr class="text-left">
+                <th>Base Verbal</th>
+                <th>Simple Past</th>
+                <th>Past Participe</th>
+            </tr>
+        </thead>
+        <tbody class="max-h-full overflow-auto">
+            <tr *ngFor="let verb of displayVerbs">
+                <td>{{ verb.baseVerbal }}</td>
+                <td>{{ verb.simplePast }}</td>
+                <td>{{ verb.pastParticipe }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -4,12 +4,13 @@
 @mixin theme($theme) {
     $color-config: mat.get-color-config($theme);
     @if $color-config != null {
+        $primary-palette: map.get($color-config, 'primary');
         $accent-palette: map.get($color-config, 'accent');
-        @include base($accent-palette);
+        @include base($primary-palette, $accent-palette);
     }
 }
 
-@mixin base($accent-palette) {
+@mixin base($primary-palette, $accent-palette) {
     a{
         color: mat.get-color-from-palette($accent-palette);
     }

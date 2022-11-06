@@ -11,6 +11,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FooterComponent } from './components/footer/footer.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { ThemeModule } from './components/theme/theme.module';
 
  
 @NgModule({
@@ -26,7 +27,8 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ThemeModule
   ],
   providers: [
     VerbService,
