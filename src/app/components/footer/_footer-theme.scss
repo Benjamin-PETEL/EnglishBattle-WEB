@@ -5,14 +5,13 @@
     $color-config: mat.get-color-config($theme);
     @if $color-config != null {
         $primary-palette: map.get($color-config, 'primary');
-        $accent-palette: map-get($color-config, 'accent');
-        @include color($primary-palette, $accent-palette);
+        @include color($primary-palette);
     }
 }
 
-@mixin color($primary-palette, $accent-palette) {
+@mixin color($primary-palette) {
     footer {
-        color: mat.get-color-from-palette($accent-palette);
+        color: mat.get-color-from-palette($primary-palette, darker);
         background-color: mat.get-color-from-palette($primary-palette);
     }
 }

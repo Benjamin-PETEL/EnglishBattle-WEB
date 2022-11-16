@@ -9,7 +9,6 @@ import { VerbService } from 'src/app/services/verb.service';
   styleUrls: ['./verbs.component.scss']
 })
 export class VerbsComponent implements OnInit, OnDestroy {
-
   verbs: Verb[] = [];
   displayVerbs: Verb[] = [];
   error: Error | null = null;
