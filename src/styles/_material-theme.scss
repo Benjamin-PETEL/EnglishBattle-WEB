@@ -10,6 +10,18 @@
 }
 
 @mixin base($primary-palette) {
+    ::-webkit-scrollbar-track {
+        background: mat.get-color-from-palette($primary-palette, 200);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: mat.get-color-from-palette($primary-palette, 700);
+    }
+
+    body{
+        scrollbar-color:mat.get-color-from-palette($primary-palette, 700) mat.get-color-from-palette($primary-palette, 200);
+    }
+
     a{
         color: mat.get-color-from-palette($primary-palette, darker);
     }
@@ -20,5 +32,9 @@
 
     a:active{
         color: mat.get-color-from-palette($primary-palette, lighter);
+    }
+
+    .mat-table-sticky {
+        background-color: mat.get-color-from-palette($primary-palette);
     }
 }

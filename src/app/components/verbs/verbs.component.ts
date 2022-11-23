@@ -11,6 +11,7 @@ import { VerbService } from 'src/app/services/verb.service';
 export class VerbsComponent implements OnInit, OnDestroy {
   verbs: Verb[] = [];
   displayVerbs: Verb[] = [];
+  displayedColumns: string [] = ['baseVerbal', 'simplePast', 'pastParticipe'];
   error: Error | null = null;
   private getVerbsSubscription: Subscription | undefined;
 
